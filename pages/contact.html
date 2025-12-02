@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Daily Peenoise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <header>
+    <h1>The Daily Peenoise</h1>
+    <h2>A Chronicle of Philippine History Through Colonization</h2>
+    <div class="meta">Vol. 1, No. 1 — Bangadiw Edition</div>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Colonization Era ▼</button>
+      <div class="dropdown-content">
+        <a href="spanish.html">Spanish Era</a>
+        <a href="american.html">American Era</a>
+        <a href="japanese.html">Japanese Occupation</a>
+      </div>
+    </div>
+
+    <a href="independence.html">Independence</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+
+  <div class="image-placeholder">
+    <img src="../assets/vintage-bangadiw.jpg" alt="Group Photo" style="filter: blur(2px) sepia(60%) contrast(80%) brightness(90%) saturate(70%);">
+  </div>
+
+  <div class="contact-container">
+    <div class="contact-header">
+        <span class="line"></span>
+        <h2>CONTACT THE EDITORIAL DESK</h2>
+        <span class="line"></span>
+    </div>
+    <div class="contact-card">
+      <div class="contact-left">
+        <img src="../assets/vintage-stamp.png" alt="Stamp" class="contact-stamp">
+        <p class="contact-subtext">
+            We value historical insights, corrections, collaboration offers, and educational inquiries.
+        </p>
+        </div>
+
+        <div class="contact-right">
+        <form class="contact-form">
+            <label>Name</label>
+            <input type="text" placeholder="Your Name">
+
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com">
+
+            <label>Message</label>
+            <textarea rows="5" placeholder="Write your message here..."></textarea>
+
+            <button type="submit">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+    <div class="editorial-info">
+        <p><strong>The Daily Peenoise Editorial Office</strong></p>
+        <p>Email: thedailypeenoise@gmail.com</p>
+        <p>Facebook: facebook.com/thedailypeenoise</p>
+        <p>“Truth, history, and the Filipino spirit.”</p>
+    </div>
+  </div>
+
+    <!-- POPUP MODAL -->
+  <div id="popup-overlay" class="popup-overlay">
+    <div class="popup-box">
+        <h3>Message Sent</h3>
+        <p>Your message has been received by The Daily Peenoise Editorial Office.  
+        Expect a response within 2-3 business days.</p>
+        <button id="popup-close">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 The Daily Peenoise. All rights reserved.
+  </footer>
+
+  <script>
+    // CONTACT FORM POPUP
+    document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector(".contact-form");
+    if (!form) return; // Only run on Contact Page
+
+    const overlay = document.getElementById("popup-overlay");
+    const closeBtn = document.getElementById("popup-close");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = form.querySelector("input[type='text']").value.trim();
+        const email = form.querySelector("input[type='email']").value.trim();
+        const message = form.querySelector("textarea").value.trim();
+
+        // Validation
+        if (!name || !email || !message) {
+        alert("Please fill out all fields before sending.");
+        return;
+        }
+
+        // Simulated loading effect
+        form.querySelector("button").textContent = "Sending...";
+        form.querySelector("button").disabled = true;
+
+        setTimeout(() => {
+        // Reset button
+        form.querySelector("button").textContent = "SEND MESSAGE";
+        form.querySelector("button").disabled = false;
+
+        // Clear fields
+        form.reset();
+
+        // Show popup
+        overlay.style.display = "flex";
+
+        }, 800); // small delay for realism
+    });
+
+    closeBtn.addEventListener("click", () => {
+        overlay.style.display = "none";
+    });
+    });
+  </script>
+  <script src="scripts/dynamicArticles.js"></script>
+
+</body>
+</html>

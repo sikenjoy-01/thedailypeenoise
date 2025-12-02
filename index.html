@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Daily Peenoise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <h1>The Daily Peenoise</h1>
+    <h2>A Chronicle of Philippine History Through Colonization</h2>
+    <div class="meta">Vol. 1, No. 1 — Bangadiw Edition</div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Colonization Era ▼</button>
+      <div class="dropdown-content">
+        <a href="pages/spanish.html">Spanish Era</a>
+        <a href="pages/american.html">American Era</a>
+        <a href="pages/japanese.html">Japanese Occupation</a>
+      </div>
+    </div>
+
+    <a href="pages/independence.html">Independence</a>
+    <a href="pages/about.html">About</a>
+    <a href="pages/contact.html">Contact</a>
+  </nav>
+
+
+  <div class="image-placeholder">
+    <img src="assets/old ph.jpg" alt="Old Philippines">
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="section-title">Today in The Daily Peenoise</div>
+        <div class="left-articles">
+          <hr><p>
+          <strong>June 12, 1898 — Philippine Independence Declared</strong><br><br>
+          General Emilio Aguinaldo proclaimed the independence of the Philippines from Spain in Kawit, Cavite. 
+          The Philippine flag was unfurled and the national anthem was played publicly for the first time.      
+          </p>
+
+          <hr><p>
+          <strong>August 30, 1896 — Cry of Pugad Lawin</strong><br><br>
+          The Katipunan, led by Andrés Bonifacio, tore their cedulas as a symbol of defiance, 
+          marking the beginning of the Philippine Revolution.      
+          </p>
+
+          <hr><p>
+          <strong>March 29, 1901 — Capture of Emilio Aguinaldo</strong><br><br>
+          Aguinaldo was captured in Palanan, Isabela, effectively weakening organized resistance during the Philippine-American War.      
+          </p>
+
+        </div>
+        <div class="left-sidebar-quote">
+          <p><i>“People without the knowledge of their past history, origin, and culture is like a tree without roots.” – Jose Rizal</i></p>
+        </div>
+    </div>
+
+    <div class="middle">
+      <div class="article-title-card">
+        <div class="main-article-title">THE COLONIAL TAPESTRY OF THE PHILIPPINES: A HISTORY OF RESILIENCE</div>
+        <div class="article-author">By Ken Joshua Infante<br><br></div>
+        <i>“From pre-colonial kingdoms to the end of foreign rule, the story of the Philippines is one of resistance, adaptation, and identity.”</i>
+      </div>
+
+      <img src="assets/old manila.jpg" alt="Old Manila" />
+      <p>
+        <span class="dropcap">T</span>he history of the Philippines is a complex blend of cultures, sovereignties, and aspirations. Prior to foreign rule, the archipelago 
+        thrived with its own social structures—barangay communities led by datus, flourishing trade networks with China and the Malay world, 
+        and belief systems deeply rooted in nature and ancestry.
+      </p>
+      <p>
+        In 1521, the arrival of Ferdinand Magellan marked the beginning of Spanish interest in the islands. 
+        By 1565, Spain formally established its rule under Miguel López de Legazpi, giving rise to more than 300 years of Spanish colonization. 
+        This era shaped much of the Philippines’ religious and cultural foundation, from the spread of Catholicism to the construction of towns 
+        centered around the church and plaza.      
+      </p>
+      <p>
+        The American occupation followed the Spanish defeat in 1898, introducing public education, governance reforms, and new economic systems. 
+        While framed as “benevolent assimilation,” this period also witnessed armed resistance, including the Philippine-American War, 
+        which claimed the lives of thousands of Filipinos.
+      </p>
+      <p>
+        World War II brought yet another foreign power, the Japanese. From 1941 to 1945, the country endured a period marked by hardship, violence, 
+        and the bravery of guerrilla fighters who resisted occupation. With Japan’s surrender in 1945, the Philippines moved closer to the independence it long sought.
+      </p>
+      <p>
+        Finally, on July 4, 1946, the Philippines was formally recognized as an independent nation. The journey toward sovereignty was not simply a timeline of colonizers, 
+        but a testament to Filipino resilience, identity formation, and the continuing struggle for freedom and self-determination.
+      </p>
+    </div> 
+
+    <div class="right" id="dynamic-articles">
+      <div class="section-title">Articles You Might Like</div>
+      <hr>
+      <ul id="articles-list"></ul>
+      <hr>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2025 The Daily Peenoise. All rights reserved.
+  </footer>
+
+  <script src="scripts/dynamicArticles.js"></script>
+
+</body>
+</html>

@@ -1,6 +1,9 @@
 // dynamicArticles.js
 
-// List of all articles site-wide: title, description, URL
+// Set this to your GitHub repo name or "" if your site is deployed at root domain
+const basePath = ""; // e.g. "/philippine-history-blog" or "" if root
+
+// List of all articles site-wide: title, description, URL (no leading slash)
 const allArticles = [
   {
     title: "The Arrival of the Spaniards",
@@ -92,8 +95,11 @@ function loadDynamicArticles(containerId = 'articles-list', numberToShow = 5) {
   shuffledArticles.forEach((article, idx) => {
     const li = document.createElement('li');
     li.classList.add('dynamic-article-item');
+    // Add basePath prefix to URL here
+    const fullUrl = basePath + "/" + article.url;
+
     li.innerHTML = `
-      <strong><a href="${article.url}">${article.title}</a></strong><br>
+      <strong><a href="${fullUrl}">${article.title}</a></strong><br>
       <span class="dynamic-article-description">${article.description}</span>
     `;
     container.appendChild(li);
@@ -110,4 +116,3 @@ function loadDynamicArticles(containerId = 'articles-list', numberToShow = 5) {
 document.addEventListener('DOMContentLoaded', () => {
   loadDynamicArticles();
 });
-

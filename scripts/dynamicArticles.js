@@ -82,6 +82,13 @@ function shuffleArray(array) {
   return array;
 }
 
+// Safe function to join basePath and article URL without double slashes
+function joinPaths(base, path) {
+  if (!base.endsWith('/')) base += '/';
+  if (path.startsWith('/')) path = path.substring(1);
+  return base + path;
+}
+
 // Main function to populate dynamic articles
 function loadDynamicArticles(containerId = 'articles-list', numberToShow = 5) {
   const container = document.getElementById(containerId);
@@ -95,8 +102,11 @@ function loadDynamicArticles(containerId = 'articles-list', numberToShow = 5) {
   shuffledArticles.forEach((article, idx) => {
     const li = document.createElement('li');
     li.classList.add('dynamic-article-item');
-    // Add basePath prefix to URL here
-    const fullUrl = basePath + "/" + article.url;
+
+    // Build the full URL with basePath prefix
+    const fullUrl = joinPaths(basePath, article.url);
+
+    console.log("Generated URL:", fullUrl); // Debug log to verify URLs
 
     li.innerHTML = `
       <strong><a href="${fullUrl}">${article.title}</a></strong><br>
@@ -106,14 +116,12 @@ function loadDynamicArticles(containerId = 'articles-list', numberToShow = 5) {
 
     // Add <hr> except after last item
     if (idx !== shuffledArticles.length - 1) {
-      const hr = document.createElement('hr');
-      container.appendChild(hr);
+      container.appendChild(document.createElement('hr'));
     }
   });
 }
 
-// Run this on DOMContentLoaded to ensure container exists
+// Run on DOMContentLoaded to ensure container exists
 document.addEventListener('DOMContentLoaded', () => {
   loadDynamicArticles();
 });
-

@@ -1,7 +1,7 @@
 // dynamicArticles.js
 
 // Set this to your GitHub repo name or "" if your site is deployed at root domain
-const basePath = ""; // e.g. "/philippine-history-blog" or "" if root
+const basePath = "/thedailypeenoise"; // e.g. "/philippine-history-blog" or "" if root
 
 // List of all articles site-wide: title, description, URL (no leading slash)
 const allArticles = [
@@ -116,3 +116,4 @@ function loadDynamicArticles(containerId = 'articles-list', numberToShow = 5) {
 document.addEventListener('DOMContentLoaded', () => {
   loadDynamicArticles();
 });
+
